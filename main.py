@@ -19,12 +19,27 @@ import os,time
 n=30
 t=10000
 delay=0.05
+kaestchenbreite = 10
 '''
 	***************************
 '''
 import spielwelt,anzeige,simulation
-# welt=spielwelt.welt_erstellen(n)
-welt=spielwelt.welt_importieren()
+import tkinter
+welt=spielwelt.welt_erstellen(n)
+# welt=spielwelt.welt_importieren()
+
+
+
+
+
+tk = tkinter.Tk()
+tk.title("Conways Game of Life")
+tk.geometry(str(n * kaestchenbreite)+'x'+str(n * kaestchenbreite))
+canvas = tkinter.Canvas(tk, height=(n * kaestchenbreite), width=(n * kaestchenbreite), bd=0)
+tk.update()
+#######
+
+
 for step in range(0,t):
 	os.system('cls')
 	anzeige.zeige_die_welt_wie_sie_ist(welt)

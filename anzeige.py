@@ -8,3 +8,18 @@
 		output_str=output_str+" ".join(line)+"\n"
 	output_str+="\n---\n"
 	print (output_str)
+	
+
+
+##Neue Anzeige mit GUI
+class Kasten:
+	def __init__(self, canvas, color,kaestchenbreite):
+		self.canvas = canvas
+		self.id = canvas.create_rectangle(x*kaestchenbreite, y*kaestchenbreite, kaestchenbreite,kaestchenbreite, fill=color)
+	
+	
+def zeichnek(color, self, canvas): #Wenn 1
+	kasten = Kasten(canvas, "green",kaestchenbreite)
+def entfernek(color, self, canvas): #Wenn 0
+	kasten = Kasten(canvas, "white",kaestchenbreite)
+
