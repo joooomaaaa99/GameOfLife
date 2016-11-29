@@ -16,15 +16,16 @@ import os,time
 ***			ANPASSEN 	******
 ******************************
 '''
-n=10
-t=1000000
+n=30
+t=10000
 delay=0.05
 '''
 	***************************
 '''
 import spielwelt,anzeige,simulation
-welt=spielwelt.welt_erstellen(n)
-for step in range(0,100):
+# welt=spielwelt.welt_erstellen(n)
+welt=spielwelt.welt_importieren()
+for step in range(0,t):
 	os.system('cls')
 	anzeige.zeige_die_welt_wie_sie_ist(welt)
 	welt=simulation.veraendere_die_welt(welt)

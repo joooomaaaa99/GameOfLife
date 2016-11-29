@@ -4,11 +4,18 @@ def welt_erstellen(n):
 	for i in range(0,n):
 		welt.append([])
 		for j in range(0,n):
-			q = random.randint(0,1)
-			if q == 1:
-				welt[i].append(1)
+			x=random.randint(0,1)
+			if x==0:
+				x=" "
 			else:
-				welt[i].append(" ")
-			#welt[i].append(random.randint(0,1))
-			
+				x="1"
+			welt[i].append(x)
+	return welt
+def welt_importieren():
+	datei = open("input.csv")
+	welt=[]
+	for zeile in datei.readlines():
+		zeile=zeile.replace("0"," ")
+		welt.append(zeile.split(";"))
+	datei.close()
 	return welt
